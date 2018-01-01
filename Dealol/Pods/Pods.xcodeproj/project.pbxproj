@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CC34A5DC43763AE40876148A6DA15B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		210945BDE2BCDC439C750BDB4F0AF8C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7195D4D67F4B1207B7B7C78F97AF4D3C /* Pods-DealolTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B826B569E92C344102D2B7C3053AFC26 /* Pods-DealolTests-dummy.m */; };
+		9DE4C50AC06D6AB1A3154D811A42924C /* Pods-DealolUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEABD06042C2C3706071B252631D12F /* Pods-DealolUITests-dummy.m */; };
+		A806B49576C9264358331681909E8FE4 /* Pods-Dealol-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56E49DC5659D9A3C50186ACCC25A1E71 /* Pods-Dealol-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B64651F77447A41289E8A4AC4075C047 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		BBC12A34CAA0E8B11F0DF309E4671DD8 /* Pods-DealolUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D345B83048FF2F852C0ECEAE749949BE /* Pods-DealolUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF71E35DFA533EDA9EDC900EA81E3D2A /* Pods-Dealol-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B06D15B9A448DA282650566FB7FBD8 /* Pods-Dealol-dummy.m */; };
+		F5C540536E6D075C45B16289CDFEFAB5 /* Pods-DealolTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D6BB1CEEB6F660E1E1ACD51A3AC91C3 /* Pods-DealolTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		003C11980C9EEB204CF67B433AACB2B4 /* Pods-Dealol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dealol.release.xcconfig"; sourceTree = "<group>"; };
+		138B510FC079B1BB3D79C897D2D7C5E4 /* Pods-DealolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1B9A2064DFD50F1D06B42B10AA5A9628 /* Pods-Dealol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Dealol.modulemap"; sourceTree = "<group>"; };
+		2F6442B87244D87F8BFD7BA49AFE76D2 /* Pods-DealolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolTests.release.xcconfig"; sourceTree = "<group>"; };
+		317AE9248C97D3F4D54F21B9E0E00179 /* Pods-DealolTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DealolTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		32D7B99FDC9B274D63CF8DCD2CD717E7 /* Pods-DealolUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DealolUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3602B96497B7FEC5E5EA68D5491950E5 /* Pods-DealolTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DealolTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3D6BB1CEEB6F660E1E1ACD51A3AC91C3 /* Pods-DealolTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DealolTests-umbrella.h"; sourceTree = "<group>"; };
+		4888FB9AEFE80BDF1E30518065BE2EB3 /* Pods-DealolTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DealolTests.modulemap"; sourceTree = "<group>"; };
+		4B2FDA21B6B9C49DAD580830AEF34067 /* Pods-DealolTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DealolTests-resources.sh"; sourceTree = "<group>"; };
+		4D1D7B530E265562305734D053269245 /* Pods-Dealol-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dealol-resources.sh"; sourceTree = "<group>"; };
+		55C24AAAAA45B7CDAC8116616C399578 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E49DC5659D9A3C50186ACCC25A1E71 /* Pods-Dealol-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dealol-umbrella.h"; sourceTree = "<group>"; };
+		5CCE7D66DDCF30A8829E43F7223D09D4 /* Pods-DealolUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DealolUITests-frameworks.sh"; sourceTree = "<group>"; };
+		5EEABD06042C2C3706071B252631D12F /* Pods-DealolUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DealolUITests-dummy.m"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6CD438C3F6337FBFD27084B6F65E92B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73556065F393F9430C1E9896D00161F4 /* Pods-Dealol-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dealol-acknowledgements.plist"; sourceTree = "<group>"; };
+		77ADE1A37A7B1BFB52603341C724BBAB /* Pods-Dealol-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dealol-frameworks.sh"; sourceTree = "<group>"; };
+		78B06D15B9A448DA282650566FB7FBD8 /* Pods-Dealol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Dealol-dummy.m"; sourceTree = "<group>"; };
+		8BE692144293E474E297D28A4F03C5C6 /* Pods-DealolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E1AA9B1CE5AB4C8070AA66BF14A74DB /* Pods-DealolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		905F9A8982330981E1C5A4A8E515F1FD /* Pods-Dealol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dealol.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		969DAF15027C8AD3530ED8221A8115C8 /* Pods-DealolUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DealolUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A4A302BC77265DC9DE2DBFEF181262CF /* Pods-Dealol-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dealol-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B2C9C172C8D510F7CBCDEABD90BE35EC /* Pods-DealolUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DealolUITests.modulemap"; sourceTree = "<group>"; };
+		B826B569E92C344102D2B7C3053AFC26 /* Pods-DealolTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DealolTests-dummy.m"; sourceTree = "<group>"; };
+		BB2B4502B3E10459A2EED624B594A92A /* Pods-DealolTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DealolTests-frameworks.sh"; sourceTree = "<group>"; };
+		C113B382438052983739548BB0731E4F /* Pods-DealolUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DealolUITests-resources.sh"; sourceTree = "<group>"; };
+		CA192C74581A72A5408DAD75193F5D37 /* Pods_Dealol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dealol.framework; path = "Pods-Dealol.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDF0E371DB8250CEAB9BA67C332E08C /* Pods_DealolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DealolUITests.framework; path = "Pods-DealolUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D345B83048FF2F852C0ECEAE749949BE /* Pods-DealolUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DealolUITests-umbrella.h"; sourceTree = "<group>"; };
+		F0B95114DD15A04F592262748CB90DF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4103A11952BEF2BB6B6CE3D5594D5B2 /* Pods_DealolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DealolTests.framework; path = "Pods-DealolTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AB1137F8A1ED4DDC0C0196F59FC7160 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B64651F77447A41289E8A4AC4075C047 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BC41974937CE040EF9C02DAAA1DEEFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				210945BDE2BCDC439C750BDB4F0AF8C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		526FC51AADB18ED387C428FB7D988EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CC34A5DC43763AE40876148A6DA15B5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11D72385593F6E30CF00D34A95065F0B /* Pods-DealolUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55C24AAAAA45B7CDAC8116616C399578 /* Info.plist */,
+				B2C9C172C8D510F7CBCDEABD90BE35EC /* Pods-DealolUITests.modulemap */,
+				32D7B99FDC9B274D63CF8DCD2CD717E7 /* Pods-DealolUITests-acknowledgements.markdown */,
+				969DAF15027C8AD3530ED8221A8115C8 /* Pods-DealolUITests-acknowledgements.plist */,
+				5EEABD06042C2C3706071B252631D12F /* Pods-DealolUITests-dummy.m */,
+				5CCE7D66DDCF30A8829E43F7223D09D4 /* Pods-DealolUITests-frameworks.sh */,
+				C113B382438052983739548BB0731E4F /* Pods-DealolUITests-resources.sh */,
+				D345B83048FF2F852C0ECEAE749949BE /* Pods-DealolUITests-umbrella.h */,
+				8BE692144293E474E297D28A4F03C5C6 /* Pods-DealolUITests.debug.xcconfig */,
+				8E1AA9B1CE5AB4C8070AA66BF14A74DB /* Pods-DealolUITests.release.xcconfig */,
+			);
+			name = "Pods-DealolUITests";
+			path = "Target Support Files/Pods-DealolUITests";
+			sourceTree = "<group>";
+		};
+		1EF2B8F0185467899D3C931FB235BA7A /* Pods-DealolTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0B95114DD15A04F592262748CB90DF4 /* Info.plist */,
+				4888FB9AEFE80BDF1E30518065BE2EB3 /* Pods-DealolTests.modulemap */,
+				317AE9248C97D3F4D54F21B9E0E00179 /* Pods-DealolTests-acknowledgements.markdown */,
+				3602B96497B7FEC5E5EA68D5491950E5 /* Pods-DealolTests-acknowledgements.plist */,
+				B826B569E92C344102D2B7C3053AFC26 /* Pods-DealolTests-dummy.m */,
+				BB2B4502B3E10459A2EED624B594A92A /* Pods-DealolTests-frameworks.sh */,
+				4B2FDA21B6B9C49DAD580830AEF34067 /* Pods-DealolTests-resources.sh */,
+				3D6BB1CEEB6F660E1E1ACD51A3AC91C3 /* Pods-DealolTests-umbrella.h */,
+				138B510FC079B1BB3D79C897D2D7C5E4 /* Pods-DealolTests.debug.xcconfig */,
+				2F6442B87244D87F8BFD7BA49AFE76D2 /* Pods-DealolTests.release.xcconfig */,
+			);
+			name = "Pods-DealolTests";
+			path = "Target Support Files/Pods-DealolTests";
+			sourceTree = "<group>";
+		};
+		2DC57E6354DDB46DFB2A3FC4A6A7F7B1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				96B00903CAA432565AE04562FCDB501A /* Pods-Dealol */,
+				1EF2B8F0185467899D3C931FB235BA7A /* Pods-DealolTests */,
+				11D72385593F6E30CF00D34A95065F0B /* Pods-DealolUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				7F05AB9C7E051D288EF731600A0EE218 /* Products */,
+				2DC57E6354DDB46DFB2A3FC4A6A7F7B1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F05AB9C7E051D288EF731600A0EE218 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA192C74581A72A5408DAD75193F5D37 /* Pods_Dealol.framework */,
+				F4103A11952BEF2BB6B6CE3D5594D5B2 /* Pods_DealolTests.framework */,
+				CDDF0E371DB8250CEAB9BA67C332E08C /* Pods_DealolUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96B00903CAA432565AE04562FCDB501A /* Pods-Dealol */ = {
+			isa = PBXGroup;
+			children = (
+				6CD438C3F6337FBFD27084B6F65E92B4 /* Info.plist */,
+				1B9A2064DFD50F1D06B42B10AA5A9628 /* Pods-Dealol.modulemap */,
+				A4A302BC77265DC9DE2DBFEF181262CF /* Pods-Dealol-acknowledgements.markdown */,
+				73556065F393F9430C1E9896D00161F4 /* Pods-Dealol-acknowledgements.plist */,
+				78B06D15B9A448DA282650566FB7FBD8 /* Pods-Dealol-dummy.m */,
+				77ADE1A37A7B1BFB52603341C724BBAB /* Pods-Dealol-frameworks.sh */,
+				4D1D7B530E265562305734D053269245 /* Pods-Dealol-resources.sh */,
+				56E49DC5659D9A3C50186ACCC25A1E71 /* Pods-Dealol-umbrella.h */,
+				905F9A8982330981E1C5A4A8E515F1FD /* Pods-Dealol.debug.xcconfig */,
+				003C11980C9EEB204CF67B433AACB2B4 /* Pods-Dealol.release.xcconfig */,
+			);
+			name = "Pods-Dealol";
+			path = "Target Support Files/Pods-Dealol";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0189E8048F4E7EEF4400FD1F0781FDCA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C540536E6D075C45B16289CDFEFAB5 /* Pods-DealolTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E5F6F1D2076B797A0CD27214842437E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBC12A34CAA0E8B11F0DF309E4671DD8 /* Pods-DealolUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95491F2C2AA3486E8419705C5F920EBC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A806B49576C9264358331681909E8FE4 /* Pods-Dealol-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		287809172F8BA3A556B807604400C56E /* Pods-DealolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 066360DC580D12643F2750A7F3E442C4 /* Build configuration list for PBXNativeTarget "Pods-DealolUITests" */;
+			buildPhases = (
+				8640202EA3FDF11F525001AB4D09B2F7 /* Sources */,
+				1AB1137F8A1ED4DDC0C0196F59FC7160 /* Frameworks */,
+				1E5F6F1D2076B797A0CD27214842437E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-DealolUITests";
+			productName = "Pods-DealolUITests";
+			productReference = CDDF0E371DB8250CEAB9BA67C332E08C /* Pods_DealolUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5B5DC2CAE4037678D6354FFA8CE036D8 /* Pods-DealolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF390EA7B4AD5FFC0985A74CD5B73F55 /* Build configuration list for PBXNativeTarget "Pods-DealolTests" */;
+			buildPhases = (
+				79353BEBE166927D014898F13227F9C9 /* Sources */,
+				526FC51AADB18ED387C428FB7D988EC1 /* Frameworks */,
+				0189E8048F4E7EEF4400FD1F0781FDCA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-DealolTests";
+			productName = "Pods-DealolTests";
+			productReference = F4103A11952BEF2BB6B6CE3D5594D5B2 /* Pods_DealolTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E5A0F3CA5AFBFEE3684F556C20BBD95B /* Pods-Dealol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B801B7189AC1F811BA141058B3742550 /* Build configuration list for PBXNativeTarget "Pods-Dealol" */;
+			buildPhases = (
+				322068CD8D347FD82AA108B63BA49E57 /* Sources */,
+				1BC41974937CE040EF9C02DAAA1DEEFB /* Frameworks */,
+				95491F2C2AA3486E8419705C5F920EBC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Dealol";
+			productName = "Pods-Dealol";
+			productReference = CA192C74581A72A5408DAD75193F5D37 /* Pods_Dealol.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 7F05AB9C7E051D288EF731600A0EE218 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5A0F3CA5AFBFEE3684F556C20BBD95B /* Pods-Dealol */,
+				5B5DC2CAE4037678D6354FFA8CE036D8 /* Pods-DealolTests */,
+				287809172F8BA3A556B807604400C56E /* Pods-DealolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		322068CD8D347FD82AA108B63BA49E57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF71E35DFA533EDA9EDC900EA81E3D2A /* Pods-Dealol-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79353BEBE166927D014898F13227F9C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7195D4D67F4B1207B7B7C78F97AF4D3C /* Pods-DealolTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8640202EA3FDF11F525001AB4D09B2F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DE4C50AC06D6AB1A3154D811A42924C /* Pods-DealolUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5B84AEFE2F116735C01344B63F4C96D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905F9A8982330981E1C5A4A8E515F1FD /* Pods-Dealol.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dealol/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dealol/Pods-Dealol.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Dealol;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		621AB785940626574F07364CB14760E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		835530C51DC6F3A5A53FD8D36132478C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BE692144293E474E297D28A4F03C5C6 /* Pods-DealolUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DealolUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DealolUITests/Pods-DealolUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DealolUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8E8CCB496FE5DAC35FBE65B320D2D956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E1AA9B1CE5AB4C8070AA66BF14A74DB /* Pods-DealolUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DealolUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DealolUITests/Pods-DealolUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DealolUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B57C09D404C607DDE283C5C44183B2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		DA5FB4480F409312C163333FF70D07C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F6442B87244D87F8BFD7BA49AFE76D2 /* Pods-DealolTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DealolTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DealolTests/Pods-DealolTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DealolTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E726047435EB2DD094404E1981F935E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 138B510FC079B1BB3D79C897D2D7C5E4 /* Pods-DealolTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DealolTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DealolTests/Pods-DealolTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DealolTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EF11C6F5A18A71BA69F2CB1C1EE01334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 003C11980C9EEB204CF67B433AACB2B4 /* Pods-Dealol.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dealol/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dealol/Pods-Dealol.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Dealol;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		066360DC580D12643F2750A7F3E442C4 /* Build configuration list for PBXNativeTarget "Pods-DealolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				835530C51DC6F3A5A53FD8D36132478C /* Debug */,
+				8E8CCB496FE5DAC35FBE65B320D2D956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B57C09D404C607DDE283C5C44183B2A1 /* Debug */,
+				621AB785940626574F07364CB14760E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B801B7189AC1F811BA141058B3742550 /* Build configuration list for PBXNativeTarget "Pods-Dealol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B84AEFE2F116735C01344B63F4C96D1 /* Debug */,
+				EF11C6F5A18A71BA69F2CB1C1EE01334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF390EA7B4AD5FFC0985A74CD5B73F55 /* Build configuration list for PBXNativeTarget "Pods-DealolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E726047435EB2DD094404E1981F935E9 /* Debug */,
+				DA5FB4480F409312C163333FF70D07C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
