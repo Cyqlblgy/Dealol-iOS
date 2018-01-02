@@ -10,6 +10,7 @@
 		2A25F3161FFB073B008E9169 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */; };
 		2A25F3171FFB073B008E9169 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */; };
 		2A25F3181FFB073B008E9169 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */; };
+		2A25F31A1FFB3784008E9169 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A25F3191FFB3784008E9169 /* SafariServices.framework */; };
 		2A78045E1ED39A3F00448D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78045D1ED39A3F00448D3B /* AppDelegate.swift */; };
 		2A7804601ED39A3F00448D3B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78045F1ED39A3F00448D3B /* FirstViewController.swift */; };
 		2A7804621ED39A3F00448D3B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7804611ED39A3F00448D3B /* SecondViewController.swift */; };
@@ -44,6 +45,7 @@
 		0F3C596C4A417EFAAFC7F92F /* Pods_DealolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DealolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B933B1CBC0BE1334E3AF71 /* Pods-Dealol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dealol.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dealol/Pods-Dealol.debug.xcconfig"; sourceTree = "<group>"; };
 		2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		2A25F3191FFB3784008E9169 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		2A78045A1ED39A3F00448D3B /* Dealol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dealol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A78045D1ED39A3F00448D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A78045F1ED39A3F00448D3B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A25F31A1FFB3784008E9169 /* SafariServices.framework in Frameworks */,
 				4D4EFBEB0CCAD394F58E038A /* Pods_Dealol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +156,7 @@
 		8EF5334C0C8082E75D8663C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A25F3191FFB3784008E9169 /* SafariServices.framework */,
 				6BD0AD268E720DFDF30D3B2D /* Pods_Dealol.framework */,
 				EACFF3D81AB2C07C3ABC6530 /* Pods_DealolTests.framework */,
 				0F3C596C4A417EFAAFC7F92F /* Pods_DealolUITests.framework */,

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SafariServices
+
 class SearchResultCell : UITableViewCell{
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -17,15 +19,26 @@ class SearchResultCell : UITableViewCell{
 
 class SearchResultViewController: UIViewController {
     var searchString: String!
-    var searchResult = [String: Any]()
+    var searchPage: Int = 0
+    var totalResult = [Dictionary<String, Any>]()
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Dealol"
+        self.searchTableView.tableFooterView = UIView()
+        self.navigationItem.setHidesBackButton(true, animated:true);
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "back"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
         fetchData()
     }
     
-    private func fetchData(){
-        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?productName=" + searchString + "&start=1"
+    @objc private func goBack(){
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    func fetchData(){
+        self.searchPage += 1
+        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?productName=" + searchString + "&start=" + String(self.searchPage)
+        NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")
             return
@@ -53,13 +66,14 @@ class SearchResultViewController: UIViewController {
                                                                             print("Could not get JSON from responseData as dictionary")
                                                                             return
                 }
-                print("The todo is: " + receivedTodo.description)
-                self.searchResult = receivedTodo
+                print("The result is: " + receivedTodo.description)
+                var temp: [String: Any] = receivedTodo
+                self.totalResult.append(contentsOf: temp["resultDeals"] as! Array)
                 DispatchQueue.main.async {
                     self.searchTableView.reloadData()
                 }
             } catch  {
-                print("error parsing response from POST on /todos")
+                print("error parsing response from GET on /todos")
                 return
             }
         }
@@ -68,17 +82,29 @@ class SearchResultViewController: UIViewController {
 }
 
 extension SearchResultViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false);
+        let result = self.totalResult[indexPath.row]
+        if !result.isEmpty, let urlString = result["itemURL"] as? String{
+            showTutorial(urlString)
+        }
+    }
     
+    private func showTutorial(_ which: String) {
+        if #available(iOS 11.0, *) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: URL.init(string: which)!, configuration: config)
+            present(vc, animated: true)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
 }
 
 extension SearchResultViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchResult.isEmpty {
-            return 0
-        }
-        else{
-            return searchResult["totalNumber"] as! Int
-        }
+        return self.totalResult.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,7 +113,7 @@ extension SearchResultViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! SearchResultCell
-        let result: [String: AnyObject] = (searchResult["resultDeals"] as! Array)[indexPath.row] as [String: AnyObject]
+        let result = self.totalResult[indexPath.row]
         if !result.isEmpty {
             cell.nameLabel.text = result["itemName"] as? String
             if let price = result["itemPrice"] as? Double{
@@ -112,14 +138,25 @@ extension SearchResultViewController: UITableViewDataSource{
                 var subRate = rate.substring(to: rate.index(rate.startIndex, offsetBy:3))
                 if subRate[rate.index(rate.startIndex, offsetBy:2)] == "0" {
                     subRate = rate.substring(to: rate.index(rate.startIndex, offsetBy:1))
+                    let rateString = "http://i2.walmartimages.com/i/CustRating/" + subRate + ".gif"
+                    let data = try? Data(contentsOf: URL(string: rateString)!)
+                    cell.reviewImage.image = UIImage(data: data!)
                 }
-                if let range = subRate.range(of: ".") {
+                else if let range = subRate.range(of: ".") {
                     subRate.replaceSubrange(range, with: "_")
                     let rateString = "http://i2.walmartimages.com/i/CustRating/" + subRate + ".gif"
                     let data = try? Data(contentsOf: URL(string: rateString)!)
                     cell.reviewImage.image = UIImage(data: data!)
                 }
             }
+            else{
+                let rateString = "http://i2.walmartimages.com/i/CustRating/0.gif"
+                let data = try? Data(contentsOf: URL(string: rateString)!)
+                cell.reviewImage.image = UIImage(data: data!)
+            }
+        }
+        if indexPath.row == self.totalResult.count-1{
+           fetchData()
         }
         return cell
     }
