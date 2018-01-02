@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A25F3161FFB073B008E9169 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */; };
+		2A25F3171FFB073B008E9169 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */; };
+		2A25F3181FFB073B008E9169 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */; };
 		2A78045E1ED39A3F00448D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78045D1ED39A3F00448D3B /* AppDelegate.swift */; };
 		2A7804601ED39A3F00448D3B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78045F1ED39A3F00448D3B /* FirstViewController.swift */; };
 		2A7804621ED39A3F00448D3B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7804611ED39A3F00448D3B /* SecondViewController.swift */; };
@@ -40,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0F3C596C4A417EFAAFC7F92F /* Pods_DealolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DealolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B933B1CBC0BE1334E3AF71 /* Pods-Dealol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dealol.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dealol/Pods-Dealol.debug.xcconfig"; sourceTree = "<group>"; };
+		2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		2A78045A1ED39A3F00448D3B /* Dealol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dealol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A78045D1ED39A3F00448D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A78045F1ED39A3F00448D3B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				2A7804661ED39A3F00448D3B /* Assets.xcassets */,
 				2A7804681ED39A3F00448D3B /* LaunchScreen.storyboard */,
 				2A78046B1ED39A3F00448D3B /* Info.plist */,
+				2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */,
 			);
 			path = Dealol;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 			files = (
 				2A7804621ED39A3F00448D3B /* SecondViewController.swift in Sources */,
 				2A78045E1ED39A3F00448D3B /* AppDelegate.swift in Sources */,
+				2A25F3161FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804601ED39A3F00448D3B /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A25F3171FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804751ED39A3F00448D3B /* DealolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A25F3181FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804801ED39A3F00448D3B /* DealolUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,6 +721,7 @@
 				2A7804861ED39A3F00448D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A7804871ED39A3F00448D3B /* Build configuration list for PBXNativeTarget "DealolTests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +730,7 @@
 				2A7804891ED39A3F00448D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A78048A1ED39A3F00448D3B /* Build configuration list for PBXNativeTarget "DealolUITests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +739,7 @@
 				2A78048C1ED39A3F00448D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
