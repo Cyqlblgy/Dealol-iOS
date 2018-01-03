@@ -38,10 +38,6 @@ class SearchResultViewController: UIViewController {
         self.refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
         self.navigationItem.setHidesBackButton(true, animated:true);
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "back"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.searchTableView.contentOffset = CGPoint.init(x: 0, y: -self.refreshControl.frame.size.height);
         self.refreshControl.sendActions(for: .valueChanged)
     }
@@ -139,7 +135,18 @@ extension SearchResultViewController: UITableViewDelegate{
 
 extension SearchResultViewController: SFSafariViewControllerDelegate{
     func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
-        return [DealActivity()]
+        let act: DealActivity = DealActivity()
+        act.dealProtocol = self
+        return [act]
+    }
+}
+
+extension SearchResultViewController: DealActivityProtocol{
+    func done(_ url: String) {
+        dismiss(animated: false) {
+            print("URL string", url)
+            //Data processing
+        }
     }
 }
 

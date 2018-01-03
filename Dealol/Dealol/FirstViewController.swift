@@ -69,8 +69,18 @@ class FirstViewController: UIViewController, UISearchBarDelegate {
 
 extension FirstViewController: SFSafariViewControllerDelegate{
     func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
-        var act: DealActivity = DealActivity()
+        let act: DealActivity = DealActivity()
+        act.dealProtocol = self
         return [act]
+    }
+}
+
+extension FirstViewController: DealActivityProtocol{
+    func done(_ url: String) {
+        dismiss(animated: false) {
+            print("URL string", url)
+            //Data processing
+        }
     }
 }
 

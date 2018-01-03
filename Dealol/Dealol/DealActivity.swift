@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol DealActivityProtocol {
+    func done(_ url: String)
+}
+
 class DealActivity: UIActivity {
+    var dealProtocol: DealActivityProtocol? = nil
     override class var activityCategory: UIActivityCategory {
         return .action
     }
@@ -31,7 +36,14 @@ class DealActivity: UIActivity {
     }
     
     override func prepare(withActivityItems activityItems: [Any]) {
-        //
+        for obj in activityItems{
+            if obj is URL{
+                let url:URL = obj as! URL
+                if dealProtocol != nil {
+                    dealProtocol!.done(url.absoluteString)
+                }
+            }
+        }
     }
     
     override func perform() {
