@@ -19,18 +19,14 @@ class FirstViewController: UIViewController, UISearchBarDelegate {
         searchBar.delegate = self
         searchBar.setImage(UIImage.init(named: "search"), for:.search, state: .normal)
         walmartButton.layer.shadowColor = UIColor.black.cgColor
-        walmartButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        walmartButton.layer.masksToBounds = false
-        walmartButton.layer.shadowRadius = 1.0
+        walmartButton.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        walmartButton.layer.shadowRadius = 5.0
         walmartButton.layer.shadowOpacity = 0.5
-        walmartButton.layer.cornerRadius = walmartButton.frame.width / 2
         
         amazonButton.layer.shadowColor = UIColor.black.cgColor
-        amazonButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
-        amazonButton.layer.masksToBounds = false
-        amazonButton.layer.shadowRadius = 1.0
+        amazonButton.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        amazonButton.layer.shadowRadius = 5.0
         amazonButton.layer.shadowOpacity = 0.5
-        amazonButton.layer.cornerRadius = amazonButton.frame.width / 2
     }
 
     @IBAction func goAmazon(_ sender: Any) {
@@ -63,10 +59,18 @@ class FirstViewController: UIViewController, UISearchBarDelegate {
             let config = SFSafariViewController.Configuration()
             config.entersReaderIfAvailable = true
             let vc = SFSafariViewController(url: URL.init(string: url)!, configuration: config)
+            vc.delegate = self;
             present(vc, animated: true)
         } else {
             // Fallback on earlier versions
         }
+    }
+}
+
+extension FirstViewController: SFSafariViewControllerDelegate{
+    func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
+        var act: DealActivity = DealActivity()
+        return [act]
     }
 }
 

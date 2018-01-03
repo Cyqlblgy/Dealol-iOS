@@ -21,21 +21,44 @@ class SearchResultViewController: UIViewController {
     var searchString: String!
     var searchPage: Int = 0
     var totalResult = [Dictionary<String, Any>]()
+    let refreshControl = UIRefreshControl()
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Dealol"
         self.searchTableView.tableFooterView = UIView()
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            self.searchTableView.refreshControl = self.refreshControl
+        } else {
+            self.searchTableView.addSubview(self.refreshControl)
+        }
+        self.refreshControl.tintColor = UIColor.black
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Fetching Result ...", attributes: [NSForegroundColorAttributeName: UIColor.black])
+        self.refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
         self.navigationItem.setHidesBackButton(true, animated:true);
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "back"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
-        fetchData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.searchTableView.contentOffset = CGPoint.init(x: 0, y: -self.refreshControl.frame.size.height);
+        self.refreshControl.sendActions(for: .valueChanged)
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        searchPage = 0
+        fetchData(true)
     }
     
     @objc private func goBack(){
         self.navigationController?.popViewController(animated: false)
     }
     
-    func fetchData(){
+    func fetchData(_ needtoStartAndEnd: Bool){
+        if needtoStartAndEnd{
+            self.refreshControl.beginRefreshing()
+        }
         self.searchPage += 1
         let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?productName=" + searchString + "&start=" + String(self.searchPage)
         NSLog("Search URL: %@", todosEndpoint)
@@ -52,10 +75,12 @@ class SearchResultViewController: UIViewController {
             guard error == nil else {
                 print("error calling GET on /todos/1")
                 print(error)
+                self.refreshControl.endRefreshing()
                 return
             }
             guard let responseData = data else {
                 print("Error: did not receive data")
+                self.refreshControl.endRefreshing()
                 return
             }
             
@@ -68,12 +93,21 @@ class SearchResultViewController: UIViewController {
                 }
                 print("The result is: " + receivedTodo.description)
                 var temp: [String: Any] = receivedTodo
-                self.totalResult.append(contentsOf: temp["resultDeals"] as! Array)
+                if needtoStartAndEnd{
+                    self.totalResult = temp["resultDeals"] as! Array
+                }
+                else{
+                    self.totalResult.append(contentsOf: temp["resultDeals"] as! Array)
+                }
                 DispatchQueue.main.async {
+                    if needtoStartAndEnd{
+                        self.refreshControl.endRefreshing()
+                    }
                     self.searchTableView.reloadData()
                 }
             } catch  {
                 print("error parsing response from GET on /todos")
+                self.refreshControl.endRefreshing()
                 return
             }
         }
@@ -95,10 +129,17 @@ extension SearchResultViewController: UITableViewDelegate{
             let config = SFSafariViewController.Configuration()
             config.entersReaderIfAvailable = true
             let vc = SFSafariViewController(url: URL.init(string: which)!, configuration: config)
+            vc.delegate = self;
             present(vc, animated: true)
         } else {
             // Fallback on earlier versions
         }
+    }
+}
+
+extension SearchResultViewController: SFSafariViewControllerDelegate{
+    func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
+        return [DealActivity()]
     }
 }
 
@@ -156,7 +197,7 @@ extension SearchResultViewController: UITableViewDataSource{
             }
         }
         if indexPath.row == self.totalResult.count-1{
-           fetchData()
+           fetchData(false)
         }
         return cell
     }
