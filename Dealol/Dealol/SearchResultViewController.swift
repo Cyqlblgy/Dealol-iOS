@@ -53,7 +53,9 @@ class SearchResultViewController: UIViewController {
     
     func fetchData(_ needtoStartAndEnd: Bool){
         if needtoStartAndEnd{
-            self.refreshControl.beginRefreshing()
+            DispatchQueue.main.async {
+                self.refreshControl.beginRefreshing()
+            }
         }
         self.searchPage += 1
         let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?productName=" + searchString + "&start=" + String(self.searchPage)
@@ -71,12 +73,16 @@ class SearchResultViewController: UIViewController {
             guard error == nil else {
                 print("error calling GET on /todos/1")
                 print(error)
-                self.refreshControl.endRefreshing()
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                }
                 return
             }
             guard let responseData = data else {
                 print("Error: did not receive data")
-                self.refreshControl.endRefreshing()
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                }
                 return
             }
             
@@ -103,7 +109,9 @@ class SearchResultViewController: UIViewController {
                 }
             } catch  {
                 print("error parsing response from GET on /todos")
-                self.refreshControl.endRefreshing()
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                }
                 return
             }
         }
@@ -125,27 +133,9 @@ extension SearchResultViewController: UITableViewDelegate{
             let config = SFSafariViewController.Configuration()
             config.entersReaderIfAvailable = true
             let vc = SFSafariViewController(url: URL.init(string: which)!, configuration: config)
-            vc.delegate = self;
             present(vc, animated: true)
         } else {
             // Fallback on earlier versions
-        }
-    }
-}
-
-extension SearchResultViewController: SFSafariViewControllerDelegate{
-    func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
-        let act: DealActivity = DealActivity()
-        act.dealProtocol = self
-        return [act]
-    }
-}
-
-extension SearchResultViewController: DealActivityProtocol{
-    func done(_ url: String) {
-        dismiss(animated: false) {
-            print("URL string", url)
-            //Data processing
         }
     }
 }

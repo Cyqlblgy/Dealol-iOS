@@ -79,7 +79,32 @@ extension FirstViewController: DealActivityProtocol{
     func done(_ url: String) {
         dismiss(animated: false) {
             print("URL string", url)
-            //Data processing
+            var searchString: String = ""
+            if url.contains("www.amazon.com") && url.contains("/dp/"){
+                let range1 = url.range(of: "www.amazon.com/")?.upperBound
+                let range2 = url.range(of: "/dp/")?.lowerBound
+                searchString = url.substring(with: range1..<range2)
+                searchString = searchString.replacingOccurrences(of: "-", with: " ", options: .literal, range: nil)
+            }
+            else if url.contains("www.walmart.com/ip/"){
+                let stringArray = url.split(separator: "/")
+                if stringArray.count > 2{
+                    searchString = String(stringArray[stringArray.count-2])
+                }
+                searchString = searchString.replacingOccurrences(of: "-", with: " ", options: .literal, range: nil)
+            }
+            print("search string:", searchString)
+            if searchString.count == 0{
+                let alert = UIAlertController(title: "Please try again", message: "You search is not valid", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else{
+                NSLog("Search text: %@",searchString)
+                let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
+                searchResultVC.searchString = searchString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+                self.navigationController?.pushViewController(searchResultVC, animated: true)
+            }
         }
     }
 }
