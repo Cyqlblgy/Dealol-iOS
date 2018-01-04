@@ -22,16 +22,20 @@
 		003C11980C9EEB204CF67B433AACB2B4 /* Pods-Dealol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dealol.release.xcconfig"; sourceTree = "<group>"; };
 		138B510FC079B1BB3D79C897D2D7C5E4 /* Pods-DealolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1B9A2064DFD50F1D06B42B10AA5A9628 /* Pods-Dealol.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Dealol.modulemap"; sourceTree = "<group>"; };
+		200C81134ACADBF4B01AF7F1C51DE9EC /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		29DE526E5B1D3B37719460B12B391B91 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
 		2F6442B87244D87F8BFD7BA49AFE76D2 /* Pods-DealolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolTests.release.xcconfig"; sourceTree = "<group>"; };
 		317AE9248C97D3F4D54F21B9E0E00179 /* Pods-DealolTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DealolTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		32D7B99FDC9B274D63CF8DCD2CD717E7 /* Pods-DealolUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DealolUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3602B96497B7FEC5E5EA68D5491950E5 /* Pods-DealolTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DealolTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3D6BB1CEEB6F660E1E1ACD51A3AC91C3 /* Pods-DealolTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DealolTests-umbrella.h"; sourceTree = "<group>"; };
 		4888FB9AEFE80BDF1E30518065BE2EB3 /* Pods-DealolTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DealolTests.modulemap"; sourceTree = "<group>"; };
+		494C290BDBEAED23BA5743A3CE2FA0D1 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		4B2FDA21B6B9C49DAD580830AEF34067 /* Pods-DealolTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DealolTests-resources.sh"; sourceTree = "<group>"; };
 		4D1D7B530E265562305734D053269245 /* Pods-Dealol-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dealol-resources.sh"; sourceTree = "<group>"; };
 		55C24AAAAA45B7CDAC8116616C399578 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56E49DC5659D9A3C50186ACCC25A1E71 /* Pods-Dealol-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dealol-umbrella.h"; sourceTree = "<group>"; };
+		5B0AC4555A08701A9F1760172610E0AF /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
 		5CCE7D66DDCF30A8829E43F7223D09D4 /* Pods-DealolUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DealolUITests-frameworks.sh"; sourceTree = "<group>"; };
 		5EEABD06042C2C3706071B252631D12F /* Pods-DealolUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DealolUITests-dummy.m"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -39,12 +43,17 @@
 		73556065F393F9430C1E9896D00161F4 /* Pods-Dealol-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dealol-acknowledgements.plist"; sourceTree = "<group>"; };
 		77ADE1A37A7B1BFB52603341C724BBAB /* Pods-Dealol-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dealol-frameworks.sh"; sourceTree = "<group>"; };
 		78B06D15B9A448DA282650566FB7FBD8 /* Pods-Dealol-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Dealol-dummy.m"; sourceTree = "<group>"; };
+		82981FB005A4ED4C556297735FD4ACED /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
+		856A7EF81F93DD33C78FA7140067110C /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
 		8BE692144293E474E297D28A4F03C5C6 /* Pods-DealolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DB331D62E03B90D571016097AB0A7E0 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		8E1AA9B1CE5AB4C8070AA66BF14A74DB /* Pods-DealolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DealolUITests.release.xcconfig"; sourceTree = "<group>"; };
 		905F9A8982330981E1C5A4A8E515F1FD /* Pods-Dealol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dealol.debug.xcconfig"; sourceTree = "<group>"; };
+		92972CC1C216B42A9AB4B6EABB27FC16 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		969DAF15027C8AD3530ED8221A8115C8 /* Pods-DealolUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DealolUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A4A302BC77265DC9DE2DBFEF181262CF /* Pods-Dealol-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dealol-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A61E08527EFC3DBEDD4BFA0B5C45104C /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		B2C9C172C8D510F7CBCDEABD90BE35EC /* Pods-DealolUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DealolUITests.modulemap"; sourceTree = "<group>"; };
 		B826B569E92C344102D2B7C3053AFC26 /* Pods-DealolTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DealolTests-dummy.m"; sourceTree = "<group>"; };
 		BB2B4502B3E10459A2EED624B594A92A /* Pods-DealolTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DealolTests-frameworks.sh"; sourceTree = "<group>"; };
@@ -52,6 +61,8 @@
 		CA192C74581A72A5408DAD75193F5D37 /* Pods_Dealol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dealol.framework; path = "Pods-Dealol.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDF0E371DB8250CEAB9BA67C332E08C /* Pods_DealolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DealolUITests.framework; path = "Pods-DealolUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D345B83048FF2F852C0ECEAE749949BE /* Pods-DealolUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DealolUITests-umbrella.h"; sourceTree = "<group>"; };
+		DBA48C54AB315A7317F3DD387EF04883 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		EAC88243AB9F702F3015F7068842116A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
 		F0B95114DD15A04F592262748CB90DF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4103A11952BEF2BB6B6CE3D5594D5B2 /* Pods_DealolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DealolTests.framework; path = "Pods-DealolTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +113,15 @@
 			path = "Target Support Files/Pods-DealolUITests";
 			sourceTree = "<group>";
 		};
+		1DECF7299F0875E9BCB9492390207331 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26F9D6AB1F30C869A5F58AF8EF5A99C8 /* Crashlytics */,
+				D479A0301687E2A8F6F67D392B8551D2 /* Fabric */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1EF2B8F0185467899D3C931FB235BA7A /* Pods-DealolTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +140,22 @@
 			path = "Target Support Files/Pods-DealolTests";
 			sourceTree = "<group>";
 		};
+		26F9D6AB1F30C869A5F58AF8EF5A99C8 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				5B0AC4555A08701A9F1760172610E0AF /* ANSCompatibility.h */,
+				A61E08527EFC3DBEDD4BFA0B5C45104C /* Answers.h */,
+				8DB331D62E03B90D571016097AB0A7E0 /* CLSAttributes.h */,
+				29DE526E5B1D3B37719460B12B391B91 /* CLSLogging.h */,
+				856A7EF81F93DD33C78FA7140067110C /* CLSReport.h */,
+				DBA48C54AB315A7317F3DD387EF04883 /* CLSStackFrame.h */,
+				200C81134ACADBF4B01AF7F1C51DE9EC /* Crashlytics.h */,
+				E268B07786115FF5D5DFF396150E695F /* Frameworks */,
+			);
+			name = Crashlytics;
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
 		2DC57E6354DDB46DFB2A3FC4A6A7F7B1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,11 +166,20 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		2DDA681774534EB985F60A3418A4C908 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92972CC1C216B42A9AB4B6EABB27FC16 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				1DECF7299F0875E9BCB9492390207331 /* Pods */,
 				7F05AB9C7E051D288EF731600A0EE218 /* Products */,
 				2DC57E6354DDB46DFB2A3FC4A6A7F7B1 /* Targets Support Files */,
 			);
@@ -182,6 +227,25 @@
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		D479A0301687E2A8F6F67D392B8551D2 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				494C290BDBEAED23BA5743A3CE2FA0D1 /* FABAttributes.h */,
+				82981FB005A4ED4C556297735FD4ACED /* Fabric.h */,
+				2DDA681774534EB985F60A3418A4C908 /* Frameworks */,
+			);
+			name = Fabric;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		E268B07786115FF5D5DFF396150E695F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC88243AB9F702F3015F7068842116A /* Crashlytics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

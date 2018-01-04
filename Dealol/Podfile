@@ -3,7 +3,8 @@
 
 target 'Dealol' do
   use_frameworks!
-
+  pod 'Fabric'
+  pod 'Crashlytics'
   target 'DealolTests' do
     inherit! :search_paths
     # Pods for testing
