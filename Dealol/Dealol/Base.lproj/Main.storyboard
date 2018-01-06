@@ -65,7 +65,7 @@
                                 </constraints>
                                 <state key="normal" image="Amazon"/>
                                 <connections>
-                                    <action selector="goWalmart:" destination="9pv-A4-QxB" eventType="touchUpInside" id="T1m-h4-gHH"/>
+                                    <action selector="goAmazon:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kWX-iq-zr0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,7 +112,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kAq-NW-8PT" id="a1O-P3-NLn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CC9-uO-ytj" userLabel="logoImage">
