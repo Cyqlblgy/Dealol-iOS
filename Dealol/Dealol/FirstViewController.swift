@@ -78,25 +78,29 @@ extension FirstViewController: SFSafariViewControllerDelegate{
 extension FirstViewController: DealActivityProtocol{
     func done(_ url: String) {
         dismiss(animated: false) {
-            print("URL string", url)
-            var productId: String = ""
-            var source: String = ""
-            if url.contains("www.amazon.com") && url.contains("/dp/"){
-                let stringArray = url.split(separator: "/")
-                if stringArray.count > 4{
-                    productId = String(stringArray[4])
+            if UtilHelper.isValidURLString(url){
+                var productId: String = ""
+                var source: String = ""
+                if url.contains("www.amazon.com") && url.contains("/dp/"){
+                    let stringArray = url.split(separator: "/")
+                    if stringArray.count > 4{
+                        productId = String(stringArray[4])
+                    }
+                    source = "Amazon"
                 }
-                source = "Amazon"
-            }
-            else if url.contains("www.walmart.com/ip/"){
-                let stringArray = url.split(separator: "/")
-                if stringArray.count > 4{
-                    productId = String(stringArray[4])
+                else if url.contains("www.walmart.com/ip/"){
+                    let stringArray = url.split(separator: "/")
+                    if stringArray.count > 4{
+                        productId = String(stringArray[4])
+                    }
+                    source = "Walmart"
                 }
-                source = "Walmart"
+                print("productId: ", productId)
+                self.fetchKeywordsString(productId,source)
             }
-            print("productId: ", productId)
-            self.fetchKeywordsString(productId,source)
+            else{
+                self.showInvalidSearch()
+            }
         }
     }
     

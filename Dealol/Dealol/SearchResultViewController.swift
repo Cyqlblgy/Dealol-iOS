@@ -133,14 +133,17 @@ extension SearchResultViewController: UITableViewDelegate{
     }
     
     private func showTutorial(_ which: String) {
-        if #available(iOS 11.0, *) {
-            let config = SFSafariViewController.Configuration()
-            config.entersReaderIfAvailable = true
-            let vc = SFSafariViewController(url: URL.init(string: which)!, configuration: config)
-            present(vc, animated: true)
-        } else {
-            // Fallback on earlier versions
-        }
+//        if #available(iOS 11.0, *) {
+//            let config = SFSafariViewController.Configuration()
+//            config.entersReaderIfAvailable = true
+//            let vc = SFSafariViewController(url: URL.init(string: which)!, configuration: config)
+//            present(vc, animated: true)
+//        } else {
+//            // Fallback on earlier versions
+//        }
+        let bvc = self.storyboard?.instantiateViewController(withIdentifier: "browseViewController") as! BrowseViewController
+        bvc.urlString = which
+        self.navigationController?.pushViewController(bvc, animated: true)
     }
 }
 

@@ -22,6 +22,13 @@
 		2A78046A1ED39A3F00448D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7804681ED39A3F00448D3B /* LaunchScreen.storyboard */; };
 		2A7804751ED39A3F00448D3B /* DealolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7804741ED39A3F00448D3B /* DealolTests.swift */; };
 		2A7804801ED39A3F00448D3B /* DealolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78047F1ED39A3F00448D3B /* DealolUITests.swift */; };
+		348BF772200C729900ABC853 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF771200C729900ABC853 /* BrowseViewController.swift */; };
+		348BF773200C729900ABC853 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF771200C729900ABC853 /* BrowseViewController.swift */; };
+		348BF774200C729900ABC853 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF771200C729900ABC853 /* BrowseViewController.swift */; };
+		348BF776200C72CC00ABC853 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348BF775200C72CC00ABC853 /* WebKit.framework */; };
+		348BF778200C790100ABC853 /* UtilHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF777200C790100ABC853 /* UtilHelper.swift */; };
+		348BF779200C790100ABC853 /* UtilHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF777200C790100ABC853 /* UtilHelper.swift */; };
+		348BF77A200C790100ABC853 /* UtilHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF777200C790100ABC853 /* UtilHelper.swift */; };
 		4D4EFBEB0CCAD394F58E038A /* Pods_Dealol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD0AD268E720DFDF30D3B2D /* Pods_Dealol.framework */; };
 		821C8A3638A1FD1001398F32 /* Pods_DealolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C596C4A417EFAAFC7F92F /* Pods_DealolUITests.framework */; };
 		E0717753D7307F85A7E1CF92 /* Pods_DealolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACFF3D81AB2C07C3ABC6530 /* Pods_DealolTests.framework */; };
@@ -65,6 +72,9 @@
 		2A78047F1ED39A3F00448D3B /* DealolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealolUITests.swift; sourceTree = "<group>"; };
 		2A7804811ED39A3F00448D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3146BD111C50789C6CD2CC8E /* Pods-DealolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DealolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DealolTests/Pods-DealolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		348BF771200C729900ABC853 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		348BF775200C72CC00ABC853 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		348BF777200C790100ABC853 /* UtilHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilHelper.swift; sourceTree = "<group>"; };
 		6BD0AD268E720DFDF30D3B2D /* Pods_Dealol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dealol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809171AE7FCF8E46170F86A2 /* Pods-DealolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DealolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DealolUITests/Pods-DealolUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		944EA11148375BBD52D6AB77 /* Pods-Dealol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dealol.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dealol/Pods-Dealol.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348BF776200C72CC00ABC853 /* WebKit.framework in Frameworks */,
 				2A25F31A1FFB3784008E9169 /* SafariServices.framework in Frameworks */,
 				4D4EFBEB0CCAD394F58E038A /* Pods_Dealol.framework in Frameworks */,
 			);
@@ -136,6 +147,8 @@
 				2A78046B1ED39A3F00448D3B /* Info.plist */,
 				2A25F3151FFB073B008E9169 /* SearchResultViewController.swift */,
 				2A25F31B1FFB497B008E9169 /* DealActivity.swift */,
+				348BF771200C729900ABC853 /* BrowseViewController.swift */,
+				348BF777200C790100ABC853 /* UtilHelper.swift */,
 			);
 			path = Dealol;
 			sourceTree = "<group>";
@@ -161,6 +174,7 @@
 		8EF5334C0C8082E75D8663C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				348BF775200C72CC00ABC853 /* WebKit.framework */,
 				2A25F3191FFB3784008E9169 /* SafariServices.framework */,
 				6BD0AD268E720DFDF30D3B2D /* Pods_Dealol.framework */,
 				EACFF3D81AB2C07C3ABC6530 /* Pods_DealolTests.framework */,
@@ -487,9 +501,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348BF772200C729900ABC853 /* BrowseViewController.swift in Sources */,
 				2A25F31C1FFB497B008E9169 /* DealActivity.swift in Sources */,
 				2A7804621ED39A3F00448D3B /* SecondViewController.swift in Sources */,
 				2A78045E1ED39A3F00448D3B /* AppDelegate.swift in Sources */,
+				348BF778200C790100ABC853 /* UtilHelper.swift in Sources */,
 				2A25F3161FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804601ED39A3F00448D3B /* FirstViewController.swift in Sources */,
 			);
@@ -499,8 +515,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348BF779200C790100ABC853 /* UtilHelper.swift in Sources */,
 				2A25F3171FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804751ED39A3F00448D3B /* DealolTests.swift in Sources */,
+				348BF773200C729900ABC853 /* BrowseViewController.swift in Sources */,
 				2A25F31D1FFB497B008E9169 /* DealActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,8 +527,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348BF77A200C790100ABC853 /* UtilHelper.swift in Sources */,
 				2A25F3181FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804801ED39A3F00448D3B /* DealolUITests.swift in Sources */,
+				348BF774200C729900ABC853 /* BrowseViewController.swift in Sources */,
 				2A25F31E1FFB497B008E9169 /* DealActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
