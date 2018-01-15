@@ -79,33 +79,84 @@ extension FirstViewController: DealActivityProtocol{
     func done(_ url: String) {
         dismiss(animated: false) {
             print("URL string", url)
-            var searchString: String = ""
+            var productId: String = ""
+            var source: String = ""
             if url.contains("www.amazon.com") && url.contains("/dp/"){
-                let range1 = url.range(of: "www.amazon.com/")?.upperBound
-                let range2 = url.range(of: "/dp/")?.lowerBound
-                searchString = url.substring(with: range1..<range2)
-                searchString = searchString.replacingOccurrences(of: "-", with: " ", options: .literal, range: nil)
+                let stringArray = url.split(separator: "/")
+                if stringArray.count > 4{
+                    productId = String(stringArray[4])
+                }
+                source = "Amazon"
             }
             else if url.contains("www.walmart.com/ip/"){
                 let stringArray = url.split(separator: "/")
-                if stringArray.count > 2{
-                    searchString = String(stringArray[stringArray.count-2])
+                if stringArray.count > 4{
+                    productId = String(stringArray[4])
                 }
-                searchString = searchString.replacingOccurrences(of: "-", with: " ", options: .literal, range: nil)
+                source = "Walmart"
             }
-            print("search string:", searchString)
-            if searchString.count == 0{
-                let alert = UIAlertController(title: "Please try again", message: "You search is not valid", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+            print("productId: ", productId)
+            self.fetchKeywordsString(productId,source)
+        }
+    }
+    
+    private func fetchKeywordsString(_ productId: String, _ source: String){
+        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deal?id=" + productId + "&source=" + source
+        NSLog("Search URL: %@", todosEndpoint)
+        guard let todosURL = URL(string: todosEndpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        var todosUrlRequest = URLRequest(url: todosURL)
+        todosUrlRequest.httpMethod = "GET"
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: todosUrlRequest) {
+            (data, response, error) in
+            guard error == nil else {
+                print("error calling GET on deal?")
+                self.showInvalidSearch()
+                return
             }
-            else{
-                NSLog("Search text: %@",searchString)
-                let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
-                searchResultVC.searchString = searchString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-                self.navigationController?.pushViewController(searchResultVC, animated: true)
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                self.showInvalidSearch()
+                return
+            }
+            
+            // parse the result as JSON, since that's what the API provides
+            do {
+                guard let receivedTodo = try JSONSerialization.jsonObject(with: responseData,
+                                                                          options: []) as? [String: Any] else {
+                                                                            print("Could not get JSON from responseData as dictionary")
+                                                                            return
+                }
+                print("The result is: " + receivedTodo.description)
+                var temp: [String: Any] = receivedTodo
+                if let keywords = temp["keywords"] as? String{
+                    NSLog("keywords : %@",keywords)
+                    DispatchQueue.main.async {
+                        let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
+                        searchResultVC.searchString = keywords.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+                        self.navigationController?.pushViewController(searchResultVC, animated: true)
+                    }
+                }
+                else{
+                    self.showInvalidSearch()
+                }
+            } catch  {
+                print("error parsing response from GET on deal?")
+                self.showInvalidSearch()
+                return
             }
         }
+        task.resume()
+    }
+    
+    private func showInvalidSearch(){
+        let alert = UIAlertController(title: "Please try again", message: "You search is not valid", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

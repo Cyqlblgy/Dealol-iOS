@@ -21,6 +21,7 @@ class SearchResultViewController: UIViewController {
     var searchString: String!
     var searchPage: Int = 0
     var totalResult = [Dictionary<String, Any>]()
+    var maxNumber: Int = 0
     let refreshControl = UIRefreshControl()
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
@@ -58,7 +59,7 @@ class SearchResultViewController: UIViewController {
             }
         }
         self.searchPage += 1
-        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?productName=" + searchString + "&start=" + String(self.searchPage)
+        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")
@@ -97,6 +98,9 @@ class SearchResultViewController: UIViewController {
                 var temp: [String: Any] = receivedTodo
                 if needtoStartAndEnd{
                     self.totalResult = temp["resultDeals"] as! Array
+                    let amazon: Int = temp["amazonTotal"] as! Int
+                    let walmart: Int = temp["walmartTotal"] as! Int
+                    self.maxNumber = amazon + walmart
                 }
                 else{
                     self.totalResult.append(contentsOf: temp["resultDeals"] as! Array)
@@ -193,7 +197,8 @@ extension SearchResultViewController: UITableViewDataSource{
                 cell.reviewImage.image = UIImage(data: data!)
             }
         }
-        if indexPath.row == self.totalResult.count-1{
+        if indexPath.row == self.totalResult.count-1 && indexPath.row < maxNumber - 1 {
+           NSLog("Total: %d, current: %d", maxNumber, indexPath.row)
            fetchData(false)
         }
         return cell
