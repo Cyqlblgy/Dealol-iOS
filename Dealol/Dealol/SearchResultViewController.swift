@@ -13,8 +13,8 @@ class SearchResultCell : UITableViewCell{
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var reviewImage: UIImageView!
-    @IBOutlet weak var numReview: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var companyImage: UIImageView!
 }
 
 class SearchResultViewController: UIViewController {
@@ -164,11 +164,8 @@ extension SearchResultViewController: UITableViewDataSource{
             else{
                 cell.priceLabel.text = nil
             }
-            if let num = result["numberOfReviews"] as? Int{
-                cell.numReview.text = String(num)
-            }
-            else{
-                cell.numReview.text = nil
+            if let name = result["source"] as? String{
+                cell.companyImage.image = UIImage.init(named: name)
             }
             
             if let logoString = result["itemImage"] as? String{
