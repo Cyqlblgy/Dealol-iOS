@@ -55,7 +55,10 @@ class SearchResultViewController: UIViewController {
     func fetchData(_ needtoStartAndEnd: Bool){
         if needtoStartAndEnd{
             DispatchQueue.main.async {
+                print("Start fetching")
                 self.refreshControl.beginRefreshing()
+                self.searchTableView.setContentOffset(CGPoint(x: 0, y: self.searchTableView.contentOffset.y-self.refreshControl.frame.size.height), animated: true)
+                
             }
         }
         self.searchPage += 1
@@ -75,6 +78,7 @@ class SearchResultViewController: UIViewController {
                 print("error calling GET on /todos/1")
                 print(error)
                 DispatchQueue.main.async {
+                    print("End fetching")
                     self.refreshControl.endRefreshing()
                 }
                 return
@@ -82,6 +86,7 @@ class SearchResultViewController: UIViewController {
             guard let responseData = data else {
                 print("Error: did not receive data")
                 DispatchQueue.main.async {
+                    print("End fetching")
                     self.refreshControl.endRefreshing()
                 }
                 return
@@ -107,6 +112,7 @@ class SearchResultViewController: UIViewController {
                 }
                 DispatchQueue.main.async {
                     if needtoStartAndEnd{
+                        print("End fetching")
                         self.refreshControl.endRefreshing()
                     }
                     self.searchTableView.reloadData()
@@ -114,6 +120,7 @@ class SearchResultViewController: UIViewController {
             } catch  {
                 print("error parsing response from GET on /todos")
                 DispatchQueue.main.async {
+                    print("End fetching")
                     self.refreshControl.endRefreshing()
                 }
                 return
@@ -133,14 +140,6 @@ extension SearchResultViewController: UITableViewDelegate{
     }
     
     private func showTutorial(_ which: String) {
-//        if #available(iOS 11.0, *) {
-//            let config = SFSafariViewController.Configuration()
-//            config.entersReaderIfAvailable = true
-//            let vc = SFSafariViewController(url: URL.init(string: which)!, configuration: config)
-//            present(vc, animated: true)
-//        } else {
-//            // Fallback on earlier versions
-//        }
         let bvc = self.storyboard?.instantiateViewController(withIdentifier: "browseViewController") as! BrowseViewController
         bvc.urlString = which
         self.navigationController?.pushViewController(bvc, animated: true)
