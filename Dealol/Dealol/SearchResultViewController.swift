@@ -19,6 +19,7 @@ class SearchResultCell : UITableViewCell{
 
 class SearchResultViewController: UIViewController {
     var searchString: String!
+    var filterString: String = ""
     var searchPage: Int = 0
     var totalResult = [Dictionary<String, Any>]()
     var maxNumber: Int = 0
@@ -62,7 +63,12 @@ class SearchResultViewController: UIViewController {
             }
         }
         self.searchPage += 1
-        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
+        var todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
+        
+        //var todosEndpoint: String = "http://localhost:3000/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
+        if filterString.count > 0{
+            todosEndpoint = todosEndpoint + "&walmartFilter=" + filterString
+        }
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")
@@ -135,14 +141,11 @@ extension SearchResultViewController: UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: false);
         let result = self.totalResult[indexPath.row]
         if !result.isEmpty, let urlString = result["itemURL"] as? String{
-            showTutorial(urlString)
+            let bvc = self.storyboard?.instantiateViewController(withIdentifier: "browseViewController") as! BrowseViewController
+            bvc.urlString = urlString
+            bvc.browseItem = self.totalResult[indexPath.row] 
+            self.navigationController?.pushViewController(bvc, animated: true)
         }
-    }
-    
-    private func showTutorial(_ which: String) {
-        let bvc = self.storyboard?.instantiateViewController(withIdentifier: "browseViewController") as! BrowseViewController
-        bvc.urlString = which
-        self.navigationController?.pushViewController(bvc, animated: true)
     }
 }
 

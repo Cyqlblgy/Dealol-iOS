@@ -50,6 +50,7 @@ class FirstViewController: UIViewController, UISearchBarDelegate {
         NSLog("Search text: %@",searchBar.text!)
         let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
         searchResultVC.searchString = searchBar.text!.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        searchResultVC.filterString = ""
         self.navigationController?.pushViewController(searchResultVC, animated: true)
     }
     
@@ -80,23 +81,30 @@ extension FirstViewController: DealActivityProtocol{
         dismiss(animated: false) {
             if UtilHelper.isValidURLString(url){
                 var productId: String = ""
+                var searchString: String = ""
                 var source: String = ""
                 if url.contains("www.amazon.com") && url.contains("/dp/"){
                     let stringArray = url.split(separator: "/")
                     if stringArray.count > 4{
                         productId = String(stringArray[4])
                     }
+                    let range1 = url.range(of: "www.amazon.com/")?.upperBound
+                    let range2 = url.range(of: "/dp/")?.lowerBound
+                    searchString = url.substring(with: range1..<range2)
+                    searchString = searchString.replacingOccurrences(of: "-", with: " ", options: .literal, range: nil)
                     source = "Amazon"
                 }
                 else if url.contains("www.walmart.com/ip/"){
                     let stringArray = url.split(separator: "/")
                     if stringArray.count > 4{
                         productId = String(stringArray[4])
+                        searchString = String(stringArray[stringArray.count-2])
                     }
                     source = "Walmart"
                 }
                 print("productId: ", productId)
-                self.fetchKeywordsString(productId,source)
+                print("filterString: ", searchString)
+                self.fetchKeywordsString(productId,source,searchString)
             }
             else{
                 self.showInvalidSearch()
@@ -104,8 +112,10 @@ extension FirstViewController: DealActivityProtocol{
         }
     }
     
-    private func fetchKeywordsString(_ productId: String, _ source: String){
-        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deal?id=" + productId + "&source=" + source
+    private func fetchKeywordsString(_ productId: String, _ source: String, _ filterString: String){
+        //"http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/"
+        // "http://localhost:3000/deal?id="
+        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/" + productId + "&source=" + source
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")
@@ -142,6 +152,7 @@ extension FirstViewController: DealActivityProtocol{
                     DispatchQueue.main.async {
                         let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
                         searchResultVC.searchString = keywords.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+                        searchResultVC.filterString = filterString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
                         self.navigationController?.pushViewController(searchResultVC, animated: true)
                     }
                 }

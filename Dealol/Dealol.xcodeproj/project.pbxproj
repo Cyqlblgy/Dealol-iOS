@@ -29,6 +29,12 @@
 		348BF778200C790100ABC853 /* UtilHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF777200C790100ABC853 /* UtilHelper.swift */; };
 		348BF779200C790100ABC853 /* UtilHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF777200C790100ABC853 /* UtilHelper.swift */; };
 		348BF77A200C790100ABC853 /* UtilHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BF777200C790100ABC853 /* UtilHelper.swift */; };
+		34B81490200F22CD005BEBC1 /* TrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8148E200F22CD005BEBC1 /* TrackingTableViewCell.swift */; };
+		34B81491200F22CD005BEBC1 /* TrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8148E200F22CD005BEBC1 /* TrackingTableViewCell.swift */; };
+		34B81492200F22CD005BEBC1 /* TrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B8148E200F22CD005BEBC1 /* TrackingTableViewCell.swift */; };
+		34B81493200F22CD005BEBC1 /* TrackingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B8148F200F22CD005BEBC1 /* TrackingTableViewCell.xib */; };
+		34B81494200F22CD005BEBC1 /* TrackingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B8148F200F22CD005BEBC1 /* TrackingTableViewCell.xib */; };
+		34B81495200F22CD005BEBC1 /* TrackingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B8148F200F22CD005BEBC1 /* TrackingTableViewCell.xib */; };
 		4D4EFBEB0CCAD394F58E038A /* Pods_Dealol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD0AD268E720DFDF30D3B2D /* Pods_Dealol.framework */; };
 		821C8A3638A1FD1001398F32 /* Pods_DealolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C596C4A417EFAAFC7F92F /* Pods_DealolUITests.framework */; };
 		E0717753D7307F85A7E1CF92 /* Pods_DealolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACFF3D81AB2C07C3ABC6530 /* Pods_DealolTests.framework */; };
@@ -75,6 +81,8 @@
 		348BF771200C729900ABC853 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		348BF775200C72CC00ABC853 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		348BF777200C790100ABC853 /* UtilHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilHelper.swift; sourceTree = "<group>"; };
+		34B8148E200F22CD005BEBC1 /* TrackingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingTableViewCell.swift; sourceTree = "<group>"; };
+		34B8148F200F22CD005BEBC1 /* TrackingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackingTableViewCell.xib; sourceTree = "<group>"; };
 		6BD0AD268E720DFDF30D3B2D /* Pods_Dealol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dealol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809171AE7FCF8E46170F86A2 /* Pods-DealolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DealolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DealolUITests/Pods-DealolUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		944EA11148375BBD52D6AB77 /* Pods-Dealol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dealol.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dealol/Pods-Dealol.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +146,7 @@
 		2A78045C1ED39A3F00448D3B /* Dealol */ = {
 			isa = PBXGroup;
 			children = (
+				34B8148D200F22B7005BEBC1 /* Cell */,
 				2A78045D1ED39A3F00448D3B /* AppDelegate.swift */,
 				2A78045F1ED39A3F00448D3B /* FirstViewController.swift */,
 				2A7804611ED39A3F00448D3B /* SecondViewController.swift */,
@@ -169,6 +178,15 @@
 				2A7804811ED39A3F00448D3B /* Info.plist */,
 			);
 			path = DealolUITests;
+			sourceTree = "<group>";
+		};
+		34B8148D200F22B7005BEBC1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				34B8148E200F22CD005BEBC1 /* TrackingTableViewCell.swift */,
+				34B8148F200F22CD005BEBC1 /* TrackingTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8EF5334C0C8082E75D8663C0 /* Frameworks */ = {
@@ -317,6 +335,7 @@
 				2A78046A1ED39A3F00448D3B /* LaunchScreen.storyboard in Resources */,
 				2A7804671ED39A3F00448D3B /* Assets.xcassets in Resources */,
 				2A7804651ED39A3F00448D3B /* Main.storyboard in Resources */,
+				34B81493200F22CD005BEBC1 /* TrackingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B81494200F22CD005BEBC1 /* TrackingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B81495200F22CD005BEBC1 /* TrackingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,9 +506,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dealol/Pods-Dealol-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LFTwitterProfile/LFTwitterProfile.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFTwitterProfile.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -505,6 +531,7 @@
 				2A25F31C1FFB497B008E9169 /* DealActivity.swift in Sources */,
 				2A7804621ED39A3F00448D3B /* SecondViewController.swift in Sources */,
 				2A78045E1ED39A3F00448D3B /* AppDelegate.swift in Sources */,
+				34B81490200F22CD005BEBC1 /* TrackingTableViewCell.swift in Sources */,
 				348BF778200C790100ABC853 /* UtilHelper.swift in Sources */,
 				2A25F3161FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804601ED39A3F00448D3B /* FirstViewController.swift in Sources */,
@@ -515,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B81491200F22CD005BEBC1 /* TrackingTableViewCell.swift in Sources */,
 				348BF779200C790100ABC853 /* UtilHelper.swift in Sources */,
 				2A25F3171FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804751ED39A3F00448D3B /* DealolTests.swift in Sources */,
@@ -527,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B81492200F22CD005BEBC1 /* TrackingTableViewCell.swift in Sources */,
 				348BF77A200C790100ABC853 /* UtilHelper.swift in Sources */,
 				2A25F3181FFB073B008E9169 /* SearchResultViewController.swift in Sources */,
 				2A7804801ED39A3F00448D3B /* DealolUITests.swift in Sources */,

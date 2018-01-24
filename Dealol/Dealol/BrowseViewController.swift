@@ -13,6 +13,7 @@ class BrowseViewController: UIViewController {
     var webView: WKWebView!
     var urlString: String = ""
     var trackButton: UIBarButtonItem!
+    var browseItem: [String : Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Dealol"
@@ -33,7 +34,13 @@ class BrowseViewController: UIViewController {
     }
     
     @objc private func trackURL(){
-        
+        (UIApplication.shared.delegate as! AppDelegate).tempResult.append(browseItem)
+        let alert = UIAlertController(title: "Success", message: "You have added to your tracking list", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Tracking List", style: UIAlertActionStyle.default, handler:{(alert: UIAlertAction!) in
+            self.tabBarController?.selectedIndex = 1
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc private func goBack(){
