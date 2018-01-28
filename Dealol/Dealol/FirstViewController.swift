@@ -50,7 +50,7 @@ class FirstViewController: UIViewController, UISearchBarDelegate {
         NSLog("Search text: %@",searchBar.text!)
         let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
         searchResultVC.searchString = searchBar.text!.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        searchResultVC.filterString = ""
+        searchResultVC.brandName = "";
         self.navigationController?.pushViewController(searchResultVC, animated: true)
     }
     
@@ -113,9 +113,9 @@ extension FirstViewController: DealActivityProtocol{
     }
     
     private func fetchKeywordsString(_ productId: String, _ source: String, _ filterString: String){
-        //"http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/"
+        //"http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deal?id="
         // "http://localhost:3000/deal?id="
-        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/" + productId + "&source=" + source
+        let todosEndpoint: String = "http://localhost:3000/deal?id=" + productId + "&source=" + source
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")
@@ -152,7 +152,16 @@ extension FirstViewController: DealActivityProtocol{
                     DispatchQueue.main.async {
                         let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
                         searchResultVC.searchString = keywords.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-                        searchResultVC.filterString = filterString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+                        if let branName = temp["brandName"] as? String{
+                            let stringArray = branName.split(separator: " ")
+                            searchResultVC.brandName = String(stringArray[0])
+                        }
+                        else{
+                            searchResultVC.brandName = ""
+                        }
+                        if let price = temp["price"] as? Double{
+                            searchResultVC.price = Int(price)
+                        }
                         self.navigationController?.pushViewController(searchResultVC, animated: true)
                     }
                 }

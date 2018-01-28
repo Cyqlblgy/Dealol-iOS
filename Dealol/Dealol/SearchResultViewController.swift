@@ -19,10 +19,11 @@ class SearchResultCell : UITableViewCell{
 
 class SearchResultViewController: UIViewController {
     var searchString: String!
-    var filterString: String = ""
+    var brandName: String!
     var searchPage: Int = 0
     var totalResult = [Dictionary<String, Any>]()
     var maxNumber: Int = 0
+    var price: Int = 0
     let refreshControl = UIRefreshControl()
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
@@ -63,11 +64,14 @@ class SearchResultViewController: UIViewController {
             }
         }
         self.searchPage += 1
-        var todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
+        //var todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
         
-        //var todosEndpoint: String = "http://localhost:3000/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
-        if filterString.count > 0{
-            todosEndpoint = todosEndpoint + "&walmartFilter=" + filterString
+        var todosEndpoint: String = "http://localhost:3000/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
+        if brandName.count > 0 {
+            todosEndpoint = todosEndpoint + "&brandName=" + brandName
+        }
+        if price > 0 {
+            todosEndpoint = todosEndpoint + "&price=" + String(price)
         }
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
@@ -82,7 +86,7 @@ class SearchResultViewController: UIViewController {
             (data, response, error) in
             guard error == nil else {
                 print("error calling GET on /todos/1")
-                print(error)
+                print(error!)
                 DispatchQueue.main.async {
                     print("End fetching")
                     self.refreshControl.endRefreshing()
