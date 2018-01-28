@@ -43,16 +43,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-gX-bS8">
-                                <rect key="frame" x="215" y="267" width="133" height="133"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rbT-gX-bS8" secondAttribute="height" multiplier="1:1" id="Jhx-w1-7KE"/>
-                                </constraints>
-                                <state key="normal" image="Walmart"/>
-                                <connections>
-                                    <action selector="goWalmart:" destination="9pv-A4-QxB" eventType="touchUpInside" id="6AA-Cy-vnx"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lij-W2-b77">
                                 <rect key="frame" x="27.5" y="267" width="133" height="133"/>
                                 <constraints>
@@ -61,6 +51,16 @@
                                 <state key="normal" image="Amazon"/>
                                 <connections>
                                     <action selector="goAmazon:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kWX-iq-zr0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-gX-bS8">
+                                <rect key="frame" x="121" y="267" width="133" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rbT-gX-bS8" secondAttribute="height" multiplier="1:1" id="Jhx-w1-7KE"/>
+                                </constraints>
+                                <state key="normal" image="Walmart"/>
+                                <connections>
+                                    <action selector="goWalmart:" destination="9pv-A4-QxB" eventType="touchUpInside" id="6AA-Cy-vnx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,7 +73,7 @@
                             <constraint firstItem="lij-W2-b77" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="1:5" id="b6b-Hq-Jpw"/>
                             <constraint firstItem="duL-cW-JOc" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="hKl-dY-AQB"/>
                             <constraint firstItem="rbT-gX-bS8" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="1:5" id="kJI-Sa-lL0"/>
-                            <constraint firstItem="rbT-gX-bS8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" multiplier="3:2" id="u7A-Tx-hCN"/>
+                            <constraint firstItem="rbT-gX-bS8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" multiplier="1:1" id="u7A-Tx-hCN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="DeaLOL" id="BhJ-kX-rlT" colorLabel="IBBuiltInLabel-Red"/>

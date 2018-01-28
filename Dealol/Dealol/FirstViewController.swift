@@ -27,6 +27,7 @@ class FirstViewController: UIViewController, UISearchBarDelegate {
         amazonButton.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         amazonButton.layer.shadowRadius = 5.0
         amazonButton.layer.shadowOpacity = 0.5
+        amazonButton.isHidden = true
     }
 
     @IBAction func goAmazon(_ sender: Any) {
@@ -115,7 +116,7 @@ extension FirstViewController: DealActivityProtocol{
     private func fetchKeywordsString(_ productId: String, _ source: String, _ filterString: String){
         //"http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deal?id="
         // "http://localhost:3000/deal?id="
-        let todosEndpoint: String = "http://localhost:3000/deal?id=" + productId + "&source=" + source
+        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deal?id=" + productId + "&source=" + source
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")
