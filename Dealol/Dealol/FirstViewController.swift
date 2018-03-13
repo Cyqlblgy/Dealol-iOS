@@ -163,6 +163,9 @@ extension FirstViewController: DealActivityProtocol{
                         if let price = temp["price"] as? Double{
                             searchResultVC.price = Int(price)
                         }
+                        if let categoryID = temp["categoryID"] as? String{
+                            searchResultVC.categoryId = categoryID
+                        }
                         self.navigationController?.pushViewController(searchResultVC, animated: true)
                     }
                 }

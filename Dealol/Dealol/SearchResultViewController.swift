@@ -24,6 +24,7 @@ class SearchResultViewController: UIViewController {
     var totalResult = [Dictionary<String, Any>]()
     var maxNumber: Int = 0
     var price: Int = 0
+    var categoryId: String = ""
     let refreshControl = UIRefreshControl()
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
@@ -72,6 +73,9 @@ class SearchResultViewController: UIViewController {
         }
         if price > 0 {
             todosEndpoint = todosEndpoint + "&price=" + String(price)
+        }
+        if categoryId.count > 0 {
+            todosEndpoint = todosEndpoint + "&categoryID=" + categoryId
         }
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
@@ -198,7 +202,7 @@ extension SearchResultViewController: UITableViewDataSource{
                 }
             }
             else{
-                let rateString = "http://i2.walmartimages.com/i/CustRating/0.gif"
+                let rateString = "http://i2.walmartimages.com/i/CustRating/5.gif"
                 let data = try? Data(contentsOf: URL(string: rateString)!)
                 cell.reviewImage.image = UIImage(data: data!)
             }
