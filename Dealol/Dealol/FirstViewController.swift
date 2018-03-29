@@ -166,6 +166,7 @@ extension FirstViewController: DealActivityProtocol{
                         if let categoryID = temp["categoryID"] as? String{
                             searchResultVC.categoryId = categoryID
                         }
+                        searchResultVC.walmartTemp = temp;
                         self.navigationController?.pushViewController(searchResultVC, animated: true)
                     }
                 }

@@ -72,7 +72,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
             else{
-                let rateString = "http://i2.walmartimages.com/i/CustRating/0.gif"
+                let rateString = "http://i2.walmartimages.com/i/CustRating/5.gif"
                 let data = try? Data(contentsOf: URL(string: rateString)!)
                 cell.reviewImage.image = UIImage(data: data!)
             }

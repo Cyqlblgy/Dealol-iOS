@@ -24,6 +24,7 @@ class SearchResultViewController: UIViewController {
     var totalResult = [Dictionary<String, Any>]()
     var maxNumber: Int = 0
     var price: Int = 0
+    var walmartTemp = [String: Any]()
     var categoryId: String = ""
     let refreshControl = UIRefreshControl()
     @IBOutlet weak var searchTableView: UITableView!
@@ -53,6 +54,27 @@ class SearchResultViewController: UIViewController {
     
     @objc private func goBack(){
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    func sortData(_ originalData:[Dictionary<String, Any>]){
+        var stickTopResult = [Dictionary<String, Any>]()
+        var otherResult = [Dictionary<String, Any>]()
+        if(walmartTemp.count > 0){
+            for data in originalData{
+                if data["source"] as? String == "Walmart" && (data["itemName"] as? String == walmartTemp["keywords"] as? String)  || data["source"] as? String == "Amazon"{
+                    var temp = data
+                    temp["isTopElement"] = true
+                    stickTopResult.append(temp)
+                }
+                else{
+                    otherResult.append(data)
+                }
+            }
+            self.totalResult = stickTopResult + otherResult
+        }
+        else{
+            self.totalResult = originalData
+        }
     }
     
     func fetchData(_ needtoStartAndEnd: Bool){
@@ -116,7 +138,7 @@ class SearchResultViewController: UIViewController {
                 print("The result is: " + receivedTodo.description)
                 var temp: [String: Any] = receivedTodo
                 if needtoStartAndEnd{
-                    self.totalResult = temp["resultDeals"] as! Array
+                    self.sortData(temp["resultDeals"] as! Array)
                     let amazon: Int = temp["amazonTotal"] as! Int
                     let walmart: Int = temp["walmartTotal"] as! Int
                     self.maxNumber = amazon + walmart
@@ -151,7 +173,7 @@ extension SearchResultViewController: UITableViewDelegate{
         if !result.isEmpty, let urlString = result["itemURL"] as? String{
             let bvc = self.storyboard?.instantiateViewController(withIdentifier: "browseViewController") as! BrowseViewController
             bvc.urlString = urlString
-            bvc.browseItem = self.totalResult[indexPath.row] 
+            bvc.browseItem = self.totalResult[indexPath.row]
             self.navigationController?.pushViewController(bvc, animated: true)
         }
     }
@@ -185,6 +207,12 @@ extension SearchResultViewController: UITableViewDataSource{
                 let url = URL(string: logoString)
                 let data = try? Data(contentsOf: url!)
                 cell.logoImage.image = UIImage(data: data!)
+            }
+            if let isTopElement = result["isTopElement"] as? Bool{
+                cell.nameLabel.font = UIFont (name: "HelveticaNeue-Bold", size: 13)
+            }
+            else{
+                cell.nameLabel.font = UIFont (name: "HelveticaNeue", size: 13)
             }
             if let rate = result["customerRate"] as? String {
                 var subRate = rate.substring(to: rate.index(rate.startIndex, offsetBy:3))
