@@ -154,8 +154,7 @@ extension FirstViewController: DealActivityProtocol{
                         let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
                         searchResultVC.searchString = keywords.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
                         if let branName = temp["brandName"] as? String{
-                            let stringArray = branName.split(separator: " ")
-                            searchResultVC.brandName = String(stringArray[0])
+                            searchResultVC.brandName = branName.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
                         }
                         else{
                             searchResultVC.brandName = ""
