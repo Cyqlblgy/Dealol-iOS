@@ -148,8 +148,16 @@ extension FirstViewController: DealActivityProtocol{
                 }
                 print("The result is: " + receivedTodo.description)
                 var temp: [String: Any] = receivedTodo
-                if let keywords = temp["keywords"] as? String{
-                    NSLog("keywords : %@",keywords)
+                if let tempkeywords = temp["keywords"] as? String{
+                    let wordsArray = tempkeywords.components(separatedBy: " ")
+                    var keywords: String
+                    if wordsArray.count > 5 {
+                        keywords = wordsArray[0...4].joined(separator: " ")
+                    }
+                    else {
+                        keywords = tempkeywords
+                    }
+                    NSLog("keywords : %@, temp : %@",keywords, tempkeywords)
                     DispatchQueue.main.async {
                         let searchResultVC = self.storyboard?.instantiateViewController(withIdentifier: "searchResultVC") as! SearchResultViewController
                         searchResultVC.searchString = keywords.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
