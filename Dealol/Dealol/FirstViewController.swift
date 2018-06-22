@@ -114,9 +114,9 @@ extension FirstViewController: DealActivityProtocol{
     }
     
     private func fetchKeywordsString(_ productId: String, _ source: String, _ filterString: String){
-        //"http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deal?id="
+        //"http://dealol-dealol.193b.starter-ca-central-1.openshiftapps.com/deal?id="
         // "http://localhost:3000/deal?id="
-        let todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deal?id=" + productId + "&source=" + source
+        let todosEndpoint: String = "http://dealol-dealol.193b.starter-ca-central-1.openshiftapps.com/deal?id=" + productId + "&source=" + source
         NSLog("Search URL: %@", todosEndpoint)
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")

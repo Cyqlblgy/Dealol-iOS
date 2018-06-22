@@ -87,7 +87,7 @@ class SearchResultViewController: UIViewController {
             }
         }
         self.searchPage += 1
-        var todosEndpoint: String = "http://dealol-dealol.7e14.starter-us-west-2.openshiftapps.com/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
+        var todosEndpoint: String = "http://dealol-dealol.193b.starter-ca-central-1.openshiftapps.com/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
         
         //var todosEndpoint: String = "http://localhost:3000/deals/search?keywords=" + searchString + "&page=" + String(self.searchPage)
         if brandName.count > 0 {
